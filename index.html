@@ -3,97 +3,114 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nandana Stalin | Portfolio</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Nandana Stalin - Portfolio</title>
+  <link rel="stylesheet" href="css/style.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
   <header>
+    <h1>Nandana Stalin</h1>
     <nav>
-      <h1 class="logo">Nandana Stalin</h1>
       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#profile">Profile</a></li>
         <li><a href="#cv">CV</a></li>
-        <li><a href="#education">Education</a></li>
+        <li><a href="#education">Education & Expertise</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#articles">My Articles</a></li>
+        <li><a href="#weather">Weather</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
-      <button id="theme-toggle">🌙</button>
     </nav>
   </header>
 
-  <!-- Landing Section -->
-  <section id="home" class="landing">
-    <div class="intro">
-      <h2>Hi, I’m <span>Nandana Stalin</span> 👋</h2>
-      <p>Aspiring AI & Data Science Engineer | Passionate about Tech & Impact</p>
-      <a href="#projects" class="btn">View My Work</a>
-    </div>
+  <!-- Home -->
+  <section id="home">
+    <h2>Welcome!</h2>
+    <p>Hi, I'm Nandana Stalin 👋</p>
+    <p>Aspiring AI & Data Science Engineer</p>
     <div class="profile-pic">
-      <!-- Leave blank for now, you’ll upload later -->
-      <div class="pic-placeholder">Your Photo</div>
+      <!-- leave blank for now -->
     </div>
   </section>
 
   <!-- Profile -->
   <section id="profile">
     <h2>Profile</h2>
-    <p>3rd year B.Tech student at Rajagiri School of Engineering and Technology, specializing in Artificial Intelligence and Data Science. Did my schooling at SBOA Public School, S. Chittoor. An aspiring engineer who loves tech and aims to make an impact on society.</p>
+    <p>3rd year B.Tech student at Rajagiri School of Engineering and Technology.</p>
+    <p>Branch: Artificial Intelligence and Data Science.</p>
+    <p>Schooling: SBOA Public School, S. Chittoor.</p>
+    <p>An aspiring engineer who loves tech and aims to make an impact on society.</p>
   </section>
 
   <!-- CV -->
   <section id="cv">
     <h2>CV</h2>
     <ul>
-      <li><b>Internship:</b> KMRL Kochi – Developed a Document Analyzer Chatbot</li>
-      <li><b>Skills:</b> Communication, Leadership, Teamwork</li>
-      <li><b>Certifications:</b> To be updated</li>
+      <li>Internship: Kochi Metro Rail Ltd (KMRL) – Document Analyzer Chatbot</li>
+      <li>Skills: Communication, Leadership, Problem-solving</li>
+      <li>Certifications: [Add here if any]</li>
     </ul>
+    <iframe src="resume.pdf" width="100%" height="400"></iframe>
   </section>
 
   <!-- Education -->
   <section id="education">
     <h2>Education & Technical Expertise</h2>
-    <ul>
-      <li>B.Tech in AI & Data Science – Rajagiri School of Engineering and Technology (Ongoing)</li>
-      <li>Programming: Python, JavaScript</li>
-      <li>Tools & Tech: GitHub, Web Development, Chatbot Development</li>
+    <p>B.Tech – Artificial Intelligence & Data Science</p>
+    <p>Programming Languages: Python, JavaScript</p>
+    <p>Tools/Tech: Git, HTML, CSS, SQL</p>
+  </section>
+
+  <!-- Projects with jQuery Gallery -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="gallery">
+      <div class="thumbnails">
+        <img src="images/project1.png" alt="Project 1" data-title="Document Analyzer Chatbot" data-desc="A chatbot that analyzes documents developed during internship at KMRL." data-img="images/project1.png">
+        <img src="images/project2.png" alt="Project 2" data-title="Portfolio Website" data-desc="Personal portfolio website deployed on GitHub Pages." data-img="images/project2.png">
+      </div>
+      <div class="main-display">
+        <h3>Click a project thumbnail</h3>
+        <p>Details will appear here.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Articles Feed -->
+  <section id="articles">
+    <h2>My Articles</h2>
+    <ul id="articles-list">
+      <li>Loading articles...</li>
     </ul>
   </section>
 
-  <!-- Projects -->
-  <section id="projects">
-    <h2>Projects</h2>
-    <article>
-      <h3>Document Analyzer Chatbot</h3>
-      <p>Developed during my internship at KMRL Kochi. Helps analyze documents using AI techniques.</p>
-    </article>
-    <article>
-      <h3>Portfolio Website</h3>
-      <p>This interactive personal website showcasing my profile, skills, and projects.</p>
-    </article>
+  <!-- Weather API -->
+  <section id="weather">
+    <h2>Live Weather</h2>
+    <input type="text" id="cityInput" placeholder="Enter city name">
+    <button id="getWeather">Get Weather</button>
+    <div id="weatherResult"></div>
   </section>
 
   <!-- Contact -->
   <section id="contact">
-    <h2>Contact Me</h2>
-    <form id="contact-form">
-      <input type="text" id="name" placeholder="Your Name" required>
-      <input type="email" id="email" placeholder="Your Email" required>
-      <textarea id="message" placeholder="Your Message" required></textarea>
+    <h2>Contact</h2>
+    <form id="contactForm">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Message" required></textarea>
       <button type="submit">Send</button>
     </form>
-    <p>
-      📧 <a href="mailto:nandanastalin@gmail.com">nandanastalin@gmail.com</a><br>
-      🔗 <a href="https://www.linkedin.com/in/nandana-stalin-970834284" target="_blank">LinkedIn</a>
-    </p>
+    <p><a href="mailto:nandanastalin@gmail.com">Email</a> | <a href="https://www.linkedin.com/in/nandana-stalin-970834284/">LinkedIn</a></p>
   </section>
 
   <footer>
-    <p>© 2025 Nandana Stalin | Built with ❤️</p>
+    <p>&copy; 2025 Nandana Stalin</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="js/articles.js"></script>
+  <script src="js/gallery.js"></script>
+  <script src="js/weather.js"></script>
 </body>
 </html>
