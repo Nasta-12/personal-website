@@ -1,40 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio Website of Nandana Stalin">
-    <title>Nandana Stalin - Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="js/script.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nandana Stalin | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Welcome to My Portfolio</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="profile.html">Profile</a></li>
-                <li><a href="cv.html">CV</a></li>
-                <li><a href="education.html">Education & Technical Expertise</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <nav>
+      <h1 class="logo">Nandana Stalin</h1>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#profile">Profile</a></li>
+        <li><a href="#cv">CV</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button id="theme-toggle">🌙</button>
+    </nav>
+  </header>
 
-    <section>
-        <h2 id="greeting"></h2>
-        <p>Hello! I am <strong>Nandana Stalin</strong>, an aspiring engineer passionate about AI & Data Science.</p>
-        <div class="profile-pic">
-            <!-- Blank placeholder for your profile picture -->
-            <img src="images/profile.jpg" alt="Profile Picture">
-        </div>
-    </section>
+  <!-- Landing Section -->
+  <section id="home" class="landing">
+    <div class="intro">
+      <h2>Hi, I’m <span>Nandana Stalin</span> 👋</h2>
+      <p>Aspiring AI & Data Science Engineer | Passionate about Tech & Impact</p>
+      <a href="#projects" class="btn">View My Work</a>
+    </div>
+    <div class="profile-pic">
+      <!-- Leave blank for now, you’ll upload later -->
+      <div class="pic-placeholder">Your Photo</div>
+    </div>
+  </section>
 
-    <footer>
-        <p>&copy; 2025 Nandana Stalin</p>
-    </footer>
+  <!-- Profile -->
+  <section id="profile">
+    <h2>Profile</h2>
+    <p>3rd year B.Tech student at Rajagiri School of Engineering and Technology, specializing in Artificial Intelligence and Data Science. Did my schooling at SBOA Public School, S. Chittoor. An aspiring engineer who loves tech and aims to make an impact on society.</p>
+  </section>
+
+  <!-- CV -->
+  <section id="cv">
+    <h2>CV</h2>
+    <ul>
+      <li><b>Internship:</b> KMRL Kochi – Developed a Document Analyzer Chatbot</li>
+      <li><b>Skills:</b> Communication, Leadership, Teamwork</li>
+      <li><b>Certifications:</b> To be updated</li>
+    </ul>
+  </section>
+
+  <!-- Education -->
+  <section id="education">
+    <h2>Education & Technical Expertise</h2>
+    <ul>
+      <li>B.Tech in AI & Data Science – Rajagiri School of Engineering and Technology (Ongoing)</li>
+      <li>Programming: Python, JavaScript</li>
+      <li>Tools & Tech: GitHub, Web Development, Chatbot Development</li>
+    </ul>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <article>
+      <h3>Document Analyzer Chatbot</h3>
+      <p>Developed during my internship at KMRL Kochi. Helps analyze documents using AI techniques.</p>
+    </article>
+    <article>
+      <h3>Portfolio Website</h3>
+      <p>This interactive personal website showcasing my profile, skills, and projects.</p>
+    </article>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form id="contact-form">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <input type="email" id="email" placeholder="Your Email" required>
+      <textarea id="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+    <p>
+      📧 <a href="mailto:nandanastalin@gmail.com">nandanastalin@gmail.com</a><br>
+      🔗 <a href="https://www.linkedin.com/in/nandana-stalin-970834284" target="_blank">LinkedIn</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>© 2025 Nandana Stalin | Built with ❤️</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
