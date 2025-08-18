@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weather | Nandana Stalin</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+  <header>
+    <nav>
+      <ul class="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="articles.html">Articles</a></li>
+        <li><a href="weather.html" class="active">Weather</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="content">
+    <h2>Weather Information</h2>
+    <input type="text" id="city-input" placeholder="Enter city name">
+    <button id="get-weather">Get Weather</button>
+    <div id="weather-result"></div>
+
+    <h2>My Live Location</h2>
+    <div id="map"></div>
+  </section>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</body>
+</html>
