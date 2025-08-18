@@ -2,46 +2,78 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nandana Stalin | Portfolio</title>
+  <title>Personal Website</title>
   <link rel="stylesheet" href="css/style.css">
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/script.js" defer></script>
   <style>
     #map {
       height: 400px;
       width: 100%;
       border-radius: 12px;
-      margin-top: 20px;
+    }
+    .gallery {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .thumbnails {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+    .thumbnails img {
+      width: 150px;
+      height: auto;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+    .thumbnails img:hover {
+      transform: scale(1.05);
+      border-color: #0077cc;
+    }
+    .main-display {
+      text-align: center;
+    }
+    .main-display img {
+      max-width: 400px;
+      margin-top: 10px;
+      display: none;
     }
   </style>
 </head>
 <body>
-  <!-- Profile Section -->
   <header>
-    <h1>Nandana Stalin</h1>
-    <p>3rd Year B.Tech | Artificial Intelligence & Data Science</p>
-    <p>Email: <a href="mailto:nandanastalin@gmail.com">nandanastalin@gmail.com</a></p>
-    <p><a href="https://www.linkedin.com/in/nandana-stalin-970834284" target="_blank">LinkedIn</a></p>
+    <h1>Welcome to My Website</h1>
+    <nav>
+      <a href="#about">About</a> |
+      <a href="#projects">Projects</a> |
+      <a href="#articles">Articles</a> |
+      <a href="#weather">Weather</a> |
+      <a href="#map-section">My Location</a>
+    </nav>
   </header>
 
-  <!-- About -->
+  <!-- About Section -->
   <section id="about">
     <h2>About Me</h2>
-    <p>I'm an aspiring engineer passionate about technology and making a positive impact on society. 
-    Strong communicator and leader, with hands-on experience from internships and projects.</p>
+    <p>Hi! I'm Nandana Stalin. This is my personal portfolio website built for my Web Programming assignment. It showcases my profile, academic background, internship projects, and live integrations with external data sources.</p>
   </section>
 
-  <!-- Projects -->
+  <!-- Projects Section -->
   <section id="projects">
     <h2>My Projects</h2>
     <div class="gallery">
       <div class="thumbnails">
-        <!-- Add more thumbnails if you have more projects -->
-        <img src="images/chatbot.png" alt="Document Analyzer Chatbot" class="thumb" 
-          data-title="Document Analyzer Chatbot" 
-          data-desc="Developed during internship at KMRL Kochi. This chatbot analyzes and retrieves key details from uploaded documents, improving document processing efficiency." 
-          data-img="images/chatbot.png">
+        <img src="images/chatbot.png" 
+             alt="Document Analyzer Chatbot" 
+             class="thumb" 
+             data-title="Document Analyzer Chatbot" 
+             data-desc="Developed during internship at KMRL Kochi. This chatbot analyzes and retrieves key details from uploaded documents, improving document processing efficiency." 
+             data-img="images/chatbot.png">
       </div>
       <div class="main-display">
         <h3 id="project-title">Click a project thumbnail to see details</h3>
@@ -51,55 +83,27 @@
     </div>
   </section>
 
-  <!-- Articles -->
+  <!-- Articles Section -->
   <section id="articles">
-    <h2>My Articles (Dev.to)</h2>
-    <ul id="articles-list">Loading latest articles...</ul>
+    <h2>My Articles (from Dev.to)</h2>
+    <ul id="article-list"></ul>
   </section>
 
-  <!-- Weather -->
+  <!-- Weather Section -->
   <section id="weather">
-    <h2>Check Weather</h2>
-    <input type="text" id="cityInput" placeholder="Enter city name">
+    <h2>Weather Info</h2>
+    <input type="text" id="city" placeholder="Enter city name">
     <button id="getWeather">Get Weather</button>
     <div id="weatherResult"></div>
   </section>
 
-  <!-- Live Map -->
-  <section id="location">
+  <!-- Map Section -->
+  <section id="map-section">
     <h2>My Live Location</h2>
     <div id="map"></div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Nandana Stalin</p>
-  </footer>
-
-  <!-- Scripts -->
+  <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script src="js/script.js"></script>
-  <script>
-    // Initialize map
-    var map = L.map('map').setView([10.0, 76.3], 13); // default view Kochi
-
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap contributors'
-    }).addTo(map);
-
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function (position) {
-        var lat = position.coords.latitude;
-        var lon = position.coords.longitude;
-        map.setView([lat, lon], 15);
-        L.marker([lat, lon]).addTo(map)
-          .bindPopup("You are here! 📍")
-          .openPopup();
-      }, function (error) {
-        alert("Unable to get location: " + error.message);
-      });
-    } else {
-      alert("Geolocation is not supported by this browser.");
-    }
-  </script>
 </body>
 </html>
