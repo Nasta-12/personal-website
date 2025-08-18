@@ -2,31 +2,94 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Education | Nandana Stalin</title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Education - Nandana Stalin</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #6a0dad, #9c27b0);
+      color: white;
+    }
+    header {
+      background: rgba(0, 0, 0, 0.4);
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin: 0;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 15px;
+    }
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2rem;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: yellow;
+    }
+    section {
+      padding: 40px;
+      text-align: center;
+    }
+    h2 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+    .edu-card {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 12px;
+      max-width: 600px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    footer {
+      background: rgba(0, 0, 0, 0.6);
+      text-align: center;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
 </head>
 <body>
   <header>
+    <h1>Nandana Stalin</h1>
     <nav>
-      <ul class="navbar">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="education.html" class="active">Education</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="articles.html">Articles</a></li>
-        <li><a href="weather.html">Weather</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="education.html">Education</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </header>
 
-  <section class="content">
-    <h2>Education</h2>
-    <ul class="edu-list">
-      <li>B.Tech in Artificial Intelligence & Data Science – Rajagiri School of Engineering and Technology</li>
-      <li>Higher Secondary Education – [Your School Name]</li>
-      <li>High School – [Your School Name]</li>
-    </ul>
+  <section id="education">
+    <h2>My Education</h2>
+
+    <div class="edu-card">
+      <h3>B.Tech in Artificial Intelligence and Data Science</h3>
+      <p><b>Rajagiri School of Engineering and Technology</b></p>
+      <p>Currently pursuing, with a focus on AI, machine learning, NLP, and computer vision.</p>
+    </div>
+
+    <div class="edu-card">
+      <h3>Schooling</h3>
+      <p><b>SBOA Public Senior Secondary School</b></p>
+      <p>Completed my schooling here, where I developed strong foundations in academics and extracurricular activities.</p>
+    </div>
   </section>
+
+  <footer>
+    <p>© 2025 Nandana Stalin | Education</p>
+  </footer>
 </body>
 </html>
