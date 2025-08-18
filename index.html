@@ -3,13 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio website of Nandana Stalin">
   <title>Nandana Stalin - Portfolio</title>
   <link rel="stylesheet" href="css/style.css">
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
   <header>
-    <h1>Nandana Stalin</h1>
+    <h1>Welcome to My Portfolio</h1>
     <nav>
       <ul>
         <li><a href="#home">Home</a></li>
@@ -19,98 +20,89 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#articles">My Articles</a></li>
         <li><a href="#weather">Weather</a></li>
+        <li><a href="#map">Map</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- Home -->
   <section id="home">
-    <h2>Welcome!</h2>
-    <p>Hi, I'm Nandana Stalin 👋</p>
-    <p>Aspiring AI & Data Science Engineer</p>
-    <div class="profile-pic">
-      <!-- leave blank for now -->
-    </div>
+    <h2>Hello!</h2>
+    <p>Welcome to my personal website. I'm <strong>Nandana Stalin</strong>, a 3rd-year B.Tech student in Artificial Intelligence & Data Science at RSET.</p>
+    <img src="images/profile.jpg" alt="Profile Picture" style="width:150px;height:150px;">
   </section>
 
-  <!-- Profile -->
   <section id="profile">
     <h2>Profile</h2>
-    <p>3rd year B.Tech student at Rajagiri School of Engineering and Technology.</p>
-    <p>Branch: Artificial Intelligence and Data Science.</p>
-    <p>Schooling: SBOA Public School, S. Chittoor.</p>
-    <p>An aspiring engineer who loves tech and aims to make an impact on society.</p>
+    <p>Did my schooling at SBOA Public School, S. Chittoor. An aspiring engineer who loves technology and aims to make an impact on society.</p>
   </section>
 
-  <!-- CV -->
   <section id="cv">
     <h2>CV</h2>
     <ul>
-      <li>Internship: Kochi Metro Rail Ltd (KMRL) – Document Analyzer Chatbot</li>
-      <li>Skills: Communication, Leadership, Problem-solving</li>
-      <li>Certifications: [Add here if any]</li>
+      <li>Internship at KMRL Kochi - Developed a Document Analyzer Chatbot</li>
+      <li>Good communication and strong leadership skills</li>
     </ul>
-    <iframe src="resume.pdf" width="100%" height="400"></iframe>
+    <iframe src="files/sample.pdf" width="100%" height="300"></iframe>
   </section>
 
-  <!-- Education -->
   <section id="education">
     <h2>Education & Technical Expertise</h2>
-    <p>B.Tech – Artificial Intelligence & Data Science</p>
-    <p>Programming Languages: Python, JavaScript</p>
-    <p>Tools/Tech: Git, HTML, CSS, SQL</p>
+    <ul>
+      <li>B.Tech in Artificial Intelligence and Data Science (Ongoing)</li>
+      <li>Programming: Python, JavaScript, HTML, CSS</li>
+      <li>Tools: Git, GitHub, Chatbot Development</li>
+    </ul>
   </section>
 
-  <!-- Projects with jQuery Gallery -->
   <section id="projects">
     <h2>Projects</h2>
-    <div class="gallery">
-      <div class="thumbnails">
-        <img src="images/project1.png" alt="Project 1" data-title="Document Analyzer Chatbot" data-desc="A chatbot that analyzes documents developed during internship at KMRL." data-img="images/project1.png">
-        <img src="images/project2.png" alt="Project 2" data-title="Portfolio Website" data-desc="Personal portfolio website deployed on GitHub Pages." data-img="images/project2.png">
+    <div id="project-gallery">
+      <div class="thumbnail" data-title="Document Analyzer Chatbot" data-description="An intelligent chatbot that analyzes documents and extracts insights." data-img="images/project1.jpg">
+        <img src="images/project1.jpg" alt="Project 1">
       </div>
-      <div class="main-display">
-        <h3>Click a project thumbnail</h3>
-        <p>Details will appear here.</p>
+      <div class="thumbnail" data-title="Portfolio Website" data-description="My personal website showcasing my profile, projects, and skills." data-img="images/project2.jpg">
+        <img src="images/project2.jpg" alt="Project 2">
       </div>
+    </div>
+    <div id="project-display">
+      <h3>Click a project to view details</h3>
     </div>
   </section>
 
-  <!-- Articles Feed -->
   <section id="articles">
     <h2>My Articles</h2>
-    <ul id="articles-list">
-      <li>Loading articles...</li>
-    </ul>
+    <ul id="articles-list"></ul>
   </section>
 
-  <!-- Weather API -->
   <section id="weather">
-    <h2>Live Weather</h2>
-    <input type="text" id="cityInput" placeholder="Enter city name">
+    <h2>Weather Info</h2>
+    <input type="text" id="cityInput" placeholder="Enter city">
     <button id="getWeather">Get Weather</button>
     <div id="weatherResult"></div>
   </section>
 
-  <!-- Contact -->
+  <section id="map">
+    <h2>My Location</h2>
+    <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=76.2673%2C9.9312%2C76.3073%2C9.9512&amp;layer=mapnik" width="100%" height="300"></iframe>
+  </section>
+
   <section id="contact">
     <h2>Contact</h2>
     <form id="contactForm">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" placeholder="Message" required></textarea>
+      <label>Name:</label><input type="text" id="name" required><br>
+      <label>Email:</label><input type="email" id="email" required><br>
+      <label>Message:</label><textarea id="message" required></textarea><br>
       <button type="submit">Send</button>
     </form>
-    <p><a href="mailto:nandanastalin@gmail.com">Email</a> | <a href="https://www.linkedin.com/in/nandana-stalin-970834284/">LinkedIn</a></p>
+    <p>Email: <a href="mailto:nandanastalin@gmail.com">nandanastalin@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/nandana-stalin-970834284" target="_blank">Visit Profile</a></p>
   </section>
 
   <footer>
     <p>&copy; 2025 Nandana Stalin</p>
   </footer>
 
-  <script src="js/articles.js"></script>
-  <script src="js/gallery.js"></script>
-  <script src="js/weather.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
