@@ -4,186 +4,31 @@
   <meta charset="UTF-8">
   <title>Nandana Stalin - Portfolio</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #6a0dad, #9c27b0);
-      color: white;
-      line-height: 1.6;
-    }
-    header {
-      background: rgba(0, 0, 0, 0.4);
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 3rem;
-      margin: 0;
-    }
-    nav {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 15px;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 1.2rem;
-      transition: color 0.3s ease;
-    }
-    nav a:hover {
-      color: yellow;
-    }
-    section {
-      padding: 40px;
-      text-align: center;
-    }
-    h2 {
-      font-size: 2.2rem;
-      margin-bottom: 20px;
-    }
-    #map {
-      height: 400px;
-      width: 90%;
-      margin: auto;
-      border-radius: 12px;
-    }
-    #weather {
-      background: rgba(255, 255, 255, 0.1);
-      padding: 20px;
-      border-radius: 12px;
-      display: inline-block;
-    }
-    #projects .gallery {
-      display: flex;
-      justify-content: center;
-      gap: 30px;
-      margin-top: 20px;
-      flex-wrap: wrap;
-    }
-    .thumb {
-      width: 150px;
-      height: auto;
-      cursor: pointer;
-      border: 3px solid white;
-      border-radius: 12px;
-      transition: transform 0.3s;
-    }
-    .thumb:hover {
-      transform: scale(1.1);
-    }
-    .main-display {
-      margin-top: 30px;
-    }
-    footer {
-      background: rgba(0, 0, 0, 0.6);
-      text-align: center;
-      padding: 15px;
-      margin-top: 40px;
-    }
-  </style>
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <header>
-    <h1>Nandana Stalin</h1>
-    <p>B.Tech AI & Data Science | Aspiring AI Engineer</p>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="education.html">Education</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+  <div class="sidebar">
+    <h2>Menu</h2>
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">Profile</a>
+    <a href="cv.html">CV</a>
+    <a href="education.html">Education</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </div>
 
-  <section id="bio">
-    <h2>Biography</h2>
-    <p>I am Nandana Stalin, a passionate B.Tech student in Artificial Intelligence and Data Science at Rajagiri School of Engineering and Technology. I aim to harness AI for solving real-world problems through intelligent automation and innovative solutions.</p>
-  </section>
+  <div class="content">
+    <section>
+      <h1>Welcome to My Portfolio</h1>
+      <p>Hi, I’m <b>Nandana Stalin</b>, a B.Tech student specializing in Artificial Intelligence and Data Science, currently in the third year of study. I am deeply passionate about harnessing the transformative power of AI to design intelligent systems, drive innovation, and create impactful solutions that bridge the gap between technology and real-world challenges. .</p>
+    </section>
 
-  <section id="career">
-    <h2>Career Goals</h2>
-    <p>To excel in AI research, machine learning engineering, NLP, computer vision, and AI-driven product development, contributing to industries where technology makes a meaningful impact.</p>
-  </section>
-
-  <section id="interests">
-    <h2>Personal Interests</h2>
-    <p>Exploring the latest AI innovations, developing creative AI projects, and expanding my technical expertise.</p>
-  </section>
-
-  <section id="location">
-    <h2>My Live Location</h2>
-    <div id="map"></div>
-  </section>
-
-  <section id="weather">
-    <h2>Live Weather</h2>
-    <input type="text" id="cityInput" placeholder="Enter city">
-    <button onclick="getWeather()">Get Weather</button>
-    <div id="weatherResult"></div>
-  </section>
-
-  <section id="projects">
-    <h2>My Projects</h2>
-    <div class="gallery">
-      <img src="images/chatbot.png" alt="Chatbot" class="thumb"
-        data-title="Document Analyzer Chatbot"
-        data-desc="Developed during internship at KMRL Kochi. This chatbot analyzes and retrieves key details from uploaded documents, improving document processing efficiency."
-        data-img="images/chatbot.png">
-    </div>
-    <div class="main-display">
-      <h3 id="project-title">Click a project thumbnail to see details</h3>
-      <p id="project-desc"></p>
-      <img id="project-img" src="" alt="">
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2025 Nandana Stalin | Portfolio</p>
-  </footer>
-
-  <!-- Scripts -->
-  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>
-    // Location Map
-    var map = L.map('map').setView([10.0, 76.3], 13);
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; OpenStreetMap contributors'
-    }).addTo(map);
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(function (pos) {
-        var lat = pos.coords.latitude;
-        var lon = pos.coords.longitude;
-        map.setView([lat, lon], 15);
-        L.marker([lat, lon]).addTo(map).bindPopup("You are here! 📍").openPopup();
-      });
-    }
-
-    // Weather Fetch
-    async function getWeather() {
-      const city = document.getElementById("cityInput").value;
-      if (!city) return alert("Enter a city name!");
-      try {
-        const res = await fetch(`https://api.open-meteo.com/v1/forecast?latitude=10&longitude=76&current_weather=true`);
-        const data = await res.json();
-        document.getElementById("weatherResult").innerHTML =
-          `<p><b>${city}</b><br>Temperature: ${data.current_weather.temperature}°C<br>Condition: ${data.current_weather.weathercode}</p>`;
-      } catch (err) {
-        alert("Failed to fetch weather");
-      }
-    }
-
-    // Project Gallery
-    $(".thumb").on("click", function () {
-      $("#project-title").text($(this).data("title"));
-      $("#project-desc").text($(this).data("desc"));
-      $("#project-img").attr("src", $(this).data("img")).show();
-    });
-  </script>
+    <!-- Live Location + Weather -->
+    <section class="info-card">
+      <h2>🌍 My Live Location & Weather</h2>
+      <p id="location">Fetching your location...</p>
+      <p id="weather">Fetching weather...</p>
+    </section>
+  </div>
 </body>
 </html>
