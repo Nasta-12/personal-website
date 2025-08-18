@@ -1,124 +1,138 @@
-# Personal Portfolio Website  
+# Personal Portfolio Website – Nandana Stalin
 
-## Overview  
-This is my personal portfolio website designed, developed, and deployed using **HTML5, CSS, and JavaScript**.  
-It showcases my profile, academic background, skills, internship project, and includes interactive features with external data integration.  
+## 📌 Project Overview
+This is my personal portfolio website designed, developed, and deployed as part of my **Web Programming Assignment**.  
+The site highlights my **profile, education, skills, projects, and achievements**, while also including **interactive features** and **external data integration**.
 
-Live Website: [https://Nasta-12.github.io/personal-website/](https://Nasta-12.github.io/personal-website/)  
-GitHub Repository: [https://github.com/Nasta-12/personal-website](https://github.com/Nasta-12/personal-website)  
-
----
-
-## Features Implemented  
-
-### 1. Personal Profile  
-- Name, academic details, background, and contact information.  
-- Profile picture space left blank (can be uploaded later).  
-
-### 2. Projects Section (Interactive Gallery using jQuery)  
-- A **Document Analyzer Chatbot** project (developed during internship at **KMRL Kochi**).  
-- Implemented as a **clickable gallery**: when a thumbnail is clicked, the project title, description, and image dynamically update in the main display area.  
-- Uses **jQuery** for DOM manipulation.  
-
-### 3. Articles Section (External Data Integration – Dev.to Feed)  
-- Fetches **latest 5 articles** from **Dev.to** using the Dev.to API (no API key required).  
-- Uses **JavaScript fetch()** to retrieve and display clickable article links.  
-- Styled to match the website’s theme.  
-
-### 4. Live Weather Information (Open-Meteo API)  
-- Integrated **Open-Meteo API** (safe, no API key required).  
-- Users can enter a **city name** → fetches real-time weather data.  
-- Displays:  
-  - City Name  
-  - Current Temperature (°C)  
-  - Weather Description  
-  - Weather Icon  
-- Updates dynamically without page reload.  
-- Handles errors (invalid city, network issues).  
-
-### 5. Live Location Map (Leaflet + OpenStreetMap)  
-- Integrated an **interactive map** using **Leaflet.js** and **OpenStreetMap tiles**.  
-- On page load, the map tries to fetch the **user’s live location** (via browser Geolocation API).  
-- If allowed, the map centers on the user’s coordinates and marks their current location.  
-- If denied, it falls back to **Kochi** as the default view.  
+The website is deployed via **GitHub Pages** and can be accessed here:  
+👉 [Live Website](https://nasta-12.github.io/personal-website/)
 
 ---
 
-## Folder Structure  
+## 🖥️ Features Implemented
 
+### ✅ Profile & Biography
+- A dedicated section introducing **me (Nandana Stalin)** with academic background and career goals.
+- Includes personal information like email and LinkedIn.
+- Styled with responsive layout and custom CSS.
+
+---
+
+### ✅ External Data Integration – **Dev.to Feed**
+- Used the **Dev.to RSS feed** (no API key required).
+- Fetched and displayed the **5 latest articles** dynamically.
+- Articles are clickable and open in a new tab.
+- Implemented with **JavaScript `fetch()`** and styled with CSS.
+
+---
+
+### ✅ Interactive Projects Gallery – **jQuery**
+- A **project gallery** showcasing my **Document Analyzer Chatbot** built during my internship at **KMRL Kochi**.
+- Implemented with **jQuery DOM manipulation**:
+  - Clicking a thumbnail dynamically updates the main project display area with title, description, and image.
+- Fully responsive and neatly styled.
+
+---
+
+### ✅ Live Weather Information – **Open-Meteo API**
+- Integrated **weather data** using the free [Open-Meteo API](https://open-meteo.com/).  
+- Features:
+  - Input box for entering a city name.
+  - On clicking “Get Weather”:
+    - Fetches weather details in JSON.
+    - Displays city name, current temperature, weather description, and icon.
+  - Handles errors (e.g., invalid city names).
+- Implemented with **JavaScript fetch()** and **dynamic DOM updates**.
+
+---
+
+### ✅ Live Location Map – **Leaflet.js + Geolocation**
+- Embedded an **interactive map** using **Leaflet.js** and **OpenStreetMap tiles**.
+- Uses **browser geolocation** to fetch and display **my live location**.
+- Features:
+  - Map centers on user’s coordinates.
+  - A marker with popup `“You are here 📍”` is displayed.
+- Falls back to a default location (Kochi) if geolocation is denied.
+
+---
+
+### ✅ Multi-Page Navigation
+- Website has separate pages for:
+  - **Home**
+  - **Education**
+  - **Projects**
+  - **Contact**
+- Navigation bar links to different HTML pages.
+- Consistent styling across all pages.
+
+---
+
+## 📂 Project Structure
 personal-website/
 │
-├── index.html # Main website file
+├── index.html # Homepage
+├── education.html # Education page
+├── projects.html # Projects page
+├── contact.html # Contact page
+│
 ├── css/
-│ └── style.css # Custom CSS styling
+│ └── style.css # Custom styling
+│
 ├── js/
-│ └── script.js # JavaScript (fetch APIs, gallery, interactivity)
-├── images/
-│ └── chatbot.png # Project thumbnail image
+│ └── script.js # JavaScript (APIs + interactivity)
+│
+├── images/ # Profile picture, project images, icons
+│
 └── README.md # Project documentation
 
-markdown
+yaml
 Copy
 Edit
 
 ---
 
-## How It Works  
-
-1. **Dev.to Articles**  
-   - JavaScript `fetch()` retrieves article data from `https://dev.to/api/articles`.  
-   - Extracts titles and URLs → dynamically adds them as links in the "My Articles" section.  
-
-2. **Interactive Projects Gallery (jQuery)**  
-   - On clicking a project thumbnail:  
-     - The `#project-title`, `#project-desc`, and `#project-img` DOM elements update dynamically.  
-   - Implemented with **jQuery `.click()` and `.attr()`**.  
-
-3. **Weather Information**  
-   - User enters a city name → script fetches latitude/longitude via Open-Meteo geocoding.  
-   - Fetches weather data (temperature, conditions).  
-   - Displays information dynamically with icons.  
-
-4. **Live Map**  
-   - Uses **Leaflet.js** to render an interactive map.  
-   - If geolocation is enabled → centers map on user’s live location.  
-   - If denied → defaults to Kochi (10.0, 76.3).  
+## ⚙️ Technologies Used
+- **HTML5** – Structure
+- **CSS3** – Styling (responsive design, colors, layouts)
+- **JavaScript (ES6)** – Interactivity & APIs
+- **jQuery** – Project gallery DOM updates
+- **Leaflet.js + OpenStreetMap** – Map & live location
+- **Open-Meteo API** – Weather information
+- **Dev.to RSS Feed** – External articles
+- **GitHub Pages** – Hosting & deployment
 
 ---
 
-## Technologies Used  
+## 🚀 How to Run Locally
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/Nasta-12/personal-website.git
+Open the project folder.
 
-- **Frontend:** HTML5, CSS3, JavaScript (Vanilla + jQuery)  
-- **External APIs:**  
-  - [Dev.to API](https://dev.to/api) – Articles  
-  - [Open-Meteo API](https://open-meteo.com/) – Weather Data  
-- **Map Integration:** [Leaflet.js](https://leafletjs.com/) + [OpenStreetMap](https://www.openstreetmap.org/)  
+Open index.html in your browser.
 
----
+Navigate between pages using the navbar.
 
-## Deployment  
+📌 Assignment Requirements Checklist
+ HTML5 + CSS + JavaScript
 
-- Hosted on **GitHub Pages** at:  
-  👉 [https://Nasta-12.github.io/personal-website/](https://Nasta-12.github.io/personal-website/)  
+ External data integration (Dev.to RSS feed)
 
-Steps:  
-1. Created a new repository `personal-website`.  
-2. Uploaded all project files (`index.html`, `css/`, `js/`, `images/`).  
-3. Enabled **GitHub Pages** in repo settings → selected `main` branch.  
-4. Website auto-published at above link.  
+ Interactive gallery with jQuery
 
----
+ Weather information with API
 
-## Future Enhancements  
-- Add more projects to gallery.  
-- Add contact form (using Formspree).  
-- Improve animations and transitions for smooth UI.  
+ Live map with geolocation
 
----
+ Multi-page navigation
 
-## Author  
-👩‍💻 **Nandana Stalin**  
-- B.Tech 3rd Year, Rajagiri School of Engineering and Technology  
-- Branch: Artificial Intelligence & Data Science  
-- Email: [nandanastalin@gmail.com](mailto:nandanastalin@gmail.com)  
-- LinkedIn: [Nandana Stalin](https://www.linkedin.com/in/nandana-stalin-970834284/)
+ Organized folder structure
+
+ README with explanation ✅
+
+👩‍💻 Author
+Nandana Stalin
+3rd Year B.Tech, Artificial Intelligence & Data Science
+Rajagiri School of Engineering and Technology
+📧 Email: nandanastalin@gmail.com
+🔗 LinkedIn
