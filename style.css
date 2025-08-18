@@ -1,64 +1,213 @@
-body {
-  font-family: Arial, sans-serif;
+/* ========== Global Reset & Fonts ========== */
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #f9fafc;
+  color: #333;
   line-height: 1.6;
 }
 
+/* ========== Header / Navbar ========== */
 header {
-  background: #333;
-  color: white;
-  padding: 1rem 0;
+  background: linear-gradient(135deg, #5a67d8, #805ad5);
+  color: #fff;
+  padding: 1.2rem 2rem;
   text-align: center;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
 }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  padding: 0;
-}
-
-nav ul li {
-  margin: 0 15px;
-}
-
-nav ul li a {
-  color: white;
-  text-decoration: none;
+header h1 {
+  font-size: 2rem;
   font-weight: bold;
 }
 
+nav {
+  margin-top: 0.8rem;
+}
+
+nav a {
+  color: #fff;
+  margin: 0 12px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #ffdd57;
+}
+
+/* ========== Sections ========== */
 section {
-  padding: 20px;
-  border-bottom: 1px solid #ddd;
+  padding: 2.5rem 5%;
+  max-width: 1200px;
+  margin: auto;
 }
 
-.gallery {
+section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #4c51bf;
+  border-left: 6px solid #805ad5;
+  padding-left: 10px;
+}
+
+/* ========== About Section ========== */
+#about {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  margin-bottom: 2rem;
+}
+
+#about p {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+}
+
+/* ========== Projects Section ========== */
+#projects .gallery {
   display: flex;
-  gap: 20px;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
-.thumbnails img {
-  width: 100px;
-  cursor: pointer;
-  border: 2px solid #ccc;
-  border-radius: 8px;
-}
-
-.main-display {
+#projects .thumbnails {
   flex: 1;
-  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#projects .thumbnails img {
+  width: 150px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid #ddd;
+}
+
+#projects .thumbnails img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+#projects .main-display {
+  flex: 2;
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+#project-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: #2d3748;
+}
+
+#project-desc {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+
+#project-img {
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* ========== Articles Section ========== */
+#articles ul {
+  list-style: none;
+}
+
+#articles li {
+  margin-bottom: 10px;
+}
+
+#articles a {
+  text-decoration: none;
+  color: #5a67d8;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+#articles a:hover {
+  color: #805ad5;
+}
+
+/* ========== Weather Section ========== */
+#weather {
+  background: #fff;
+  border-radius: 16px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  margin-top: 2rem;
+  text-align: center;
+}
+
+#weather input {
+  padding: 0.6rem;
   border: 1px solid #ccc;
   border-radius: 8px;
+  width: 200px;
+  margin-right: 10px;
 }
 
-#articles-list li {
-  margin: 5px 0;
+#weather button {
+  padding: 0.6rem 1rem;
+  border: none;
+  background: #5a67d8;
+  color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+#weather button:hover {
+  background: #805ad5;
 }
 
 #weatherResult {
-  margin-top: 15px;
-  padding: 10px;
-  border: 1px solid #ccc;
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+}
+
+/* Weather icon */
+#weatherResult img {
+  width: 50px;
+  margin-top: 10px;
+}
+
+/* ========== Map Section ========== */
+#map {
+  height: 400px;
+  width: 100%;
+  margin-top: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* ========== Footer ========== */
+footer {
+  background: #2d3748;
+  color: #fff;
+  text-align: center;
+  padding: 1.2rem;
+  margin-top: 3rem;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+footer p {
+  font-size: 0.9rem;
 }
