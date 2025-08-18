@@ -1,41 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects - Nandana Stalin</title>
-    <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <title>Projects | Nandana Stalin</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="js/script.js" defer></script>
 </head>
 <body>
-    <header>
-        <h1>Projects</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="profile.html">Profile</a></li>
-                <li><a href="cv.html">CV</a></li>
-                <li><a href="education.html">Education & Technical Expertise</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="contact.html">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <nav>
+      <ul class="navbar">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="education.html">Education</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="articles.html">Articles</a></li>
+        <li><a href="weather.html">Weather</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <section>
-        <h2>My Projects</h2>
-        <article>
-            <h3>Document Analyzer Chatbot</h3>
-            <p>Developed during my internship at KMRL Kochi. This chatbot can analyze documents and provide insights.</p>
-        </article>
-
-        <article>
-            <h3>[Your Second Project]</h3>
-            <p>[Description of the second project]</p>
-        </article>
-    </section>
-
-    <footer>
-        <p>&copy; 2025 Nandana Stalin</p>
-    </footer>
+  <section class="content">
+    <h2>My Projects</h2>
+    <div class="gallery">
+      <div class="thumbnails">
+        <img src="images/chatbot.png" alt="Document Analyzer Chatbot"
+          class="thumb"
+          data-title="Document Analyzer Chatbot"
+          data-desc="Developed during internship at KMRL Kochi. This chatbot analyzes and retrieves key details from uploaded documents, improving document processing efficiency."
+          data-img="images/chatbot.png">
+      </div>
+      <div class="main-display">
+        <h3 id="project-title">Click a project thumbnail to see details</h3>
+        <p id="project-desc"></p>
+        <img id="project-img" src="" alt="">
+      </div>
+    </div>
+  </section>
 </body>
 </html>
